@@ -46,7 +46,7 @@ conversation_history = []
 
 def chat_with_gpt(prompt):
     global conversation_history
-    genai.configure(api_key="AIzaSyBS9U7j4XOqEjn5o0HDwAIyJ6WAf8ZKdH4")
+    genai.configure(api_key="api_key")
     model = genai.GenerativeModel("gemini-pro")
     conversation_history.append({"role": "user", "content": prompt})
     response = model.generate_content("\n".join([entry["content"] for entry in conversation_history]), stream=False)
